@@ -1,5 +1,5 @@
 #Remove the "#" from the beginning of the command to activate the command, then edit the message to your liking
-#tellraw @s {"rawtext":[{"text":"§¶§cAtomic Utility ➢ §7(PUT MESSAGE HERE)"}]}
+#tellraw @s {"rawtext":[{"text":"§¶§cAtomic Utility ⤤ §7(PUT MESSAGE HERE)"}]}
 
 
 #This hides this from the in-game function command directory

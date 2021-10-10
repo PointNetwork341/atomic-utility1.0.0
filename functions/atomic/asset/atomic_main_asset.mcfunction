@@ -51,41 +51,8 @@ scoreboard players set @s nethhelm 0
 
 #Ban Checks
 scoreboard objectives add PermBan dummy PermBan
-scoreboard objectives add BanCBE dummy BanCBE
 scoreboard objectives add Ban dummy Ban
-scoreboard objectives add IIB dummy IIB
-scoreboard objectives add BanFly dummy BanFly
-scoreboard objectives add BanPhase dummy BanPhase
 scoreboard objectives add BanWarn dummy BanWarn
-
-#ownertag checks
-scoreboard objectives add SSDEBUG2 dummy SSDEBUG2
-scoreboard objectives add ds9209D2n dummy ds9209D2n
-scoreboard objectives add 2kN0nK3Kn dummy 2kN0nK3Kn
-scoreboard objectives add m20Kds0Nd dummy m20Kds0Nd
-scoreboard objectives add 098aD2nnD dummy 098aD2nnD
-scoreboard objectives add 09d0i20jS dummy 09d0i20jS
-scoreboard objectives add 9damMM230 dummy 9damMM230
-scoreboard objectives add 9NW0d9Nas dummy 9NW0d9Nas
-
-scoreboard players set @s ds9209D2n 0
-scoreboard players set @s 2kN0nK3Kn 0
-scoreboard players set @s m20Kds0Nd 0
-scoreboard players set @s 098aD2nnD 0
-scoreboard players set @s 09d0i20jS 0
-scoreboard players set @s 9damMM230 0
-scoreboard players set @s 9NW0d9Nas 0
-
-#creativetag checks
-scoreboard objectives add point dummy fallen
-scoreboard objectives add network dummy networkh
-scoreboard objectives add is dummy ish
-scoreboard objectives add cool dummy coolh
-scoreboard objectives add ez dummy ezh
-
-#Vanish detection / default value
-scoreboard objectives add vnsh dummy vnsh
-scoreboard players set @s vnsh 0
 
 #Ban status value
 scoreboard objectives add Ban dummy Ban
@@ -94,10 +61,6 @@ scoreboard objectives add XNEZ dummy Ban3
 scoreboard players set @s XNEZ 0
 scoreboard objectives add XNEF dummy Ban4
 scoreboard players set @s XNEF 0
-
-#unban window timer
-scoreboard objectives add unbantimer dummy unbantimer
-scoreboard objectives add unban dummy unban
 
 #Mining Detection Vaules
 scoreboard objectives add diamondmd dummy diamondmd
@@ -129,14 +92,6 @@ scoreboard players set @s scrapfnd 0
 scoreboard players set @s emeraldfnd 0
 scoreboard players set @s ironfnd 0
 
-#Death Effect Toggle
-scoreboard objectives add Deathef dummy Deathef
-scoreboard objectives add dethtoggle dummy dethtoggle
-#Death Effect Default Value
-scoreboard players set @s Deathef 1
-scoreboard players set @s dethtoggle 1
-scoreboard players operation @s Deathef = BDXdummy Deathef
-scoreboard players operation @s dethtoggle = dethtoggledummy dethtoggle
 #Death coord values
 scoreboard objectives add X_Coord_D dummy
 scoreboard objectives add Y_Coord_D dummy
@@ -170,8 +125,6 @@ scoreboard players set @s feeten 0
 
 #This adds all the scoreboard stuff we need
 scoreboard objectives add warn dummy warn
-scoreboard objectives add warnillegal dummy warnillegal
-scoreboard objectives add warncbe dummy
 scoreboard objectives add lagtimer dummy lagtimer
 scoreboard objectives add hometimer dummy hometimer
 scoreboard objectives add timeplayedtick dummy timeplayedtick
@@ -186,10 +139,6 @@ scoreboard objectives add kills dummy kills
 scoreboard objectives add killstreak dummy killstreak
 scoreboard objectives add randomspawn dummy randomspawn
 scoreboard objectives add cleararealarge dummy cleararealargelarge
-scoreboard objectives add cbespawn dummy cbespawn
-scoreboard objectives add flycount dummy flycount
-scoreboard objectives add flyreset dummy flyreset
-scoreboard objectives add phasecount dummy phasecount
 scoreboard objectives add hometp dummy hometp
 scoreboard objectives add welcomed dummy welcomed
 scoreboard objectives add entitycount dummy entitycount
@@ -198,34 +147,20 @@ scoreboard objectives add moderating dummy
 
 
 #module scoreboards
-scoreboard objectives add ACM dummy ACM
 scoreboard objectives add lockdown dummy lockdown
-scoreboard objectives add ACM dummy ARM
-scoreboard objectives add APM dummy APM
-scoreboard objectives add EACM dummy EACM
-scoreboard objectives add EFM dummy EFM
-scoreboard objectives add OSM dummy OSM
-scoreboard objectives add LPB dummy LPB
 scoreboard objectives add AMM dummy AMM
 scoreboard objectives add KPM dummy KPM
 scoreboard objectives add FMM dummy FMM
-scoreboard objectives add AFM dummy AFM
-scoreboard objectives add APM dummy APM
 scoreboard objectives add BBRM dummy BBRM
 scoreboard objectives add SEM dummy SEM
 scoreboard objectives add HMM dummy HMM
 scoreboard objectives add ICM dummy ICM
 scoreboard objectives add LTM dummy LTM
 scoreboard objectives add NEM dummy NEM
-scoreboard objectives add NFM dummy NFM
-scoreboard objectives add AOPAM dummy AOPAM
 scoreboard objectives add RSM dummy RSM
-scoreboard objectives add APM dummy APM
 scoreboard objectives add SSM dummy SSM
-scoreboard objectives add CSM dummy CSM
 scoreboard objectives add TPM dummy TPM
 scoreboard objectives add WBM dummy WBM
-scoreboard objectives add IIM dummy IIM
 scoreboard objectives add IBM dummy IBM
 scoreboard objectives add DAM dummy DAM
 scoreboard objectives add TAM dummy TAM
@@ -234,32 +169,20 @@ scoreboard objectives add MDM dummy MDM
 #Module Toggles
 scoreboard objectives add SSDEBUG dummy SSDEBUG
 scoreboard objectives add SSDEBUG3 dummy SSDEBUG3
-scoreboard objectives add afmtoggle dummy afmtoggle
 scoreboard objectives add lockdowntoggle dummy lockdowntoggle
-scoreboard objectives add armtoggle dummy armtoggle
-scoreboard objectives add apmtoggle dummy apmtoggle
-scoreboard objectives add efmtoggle dummy efmtoggle
-scoreboard objectives add osmtoggle dummy osmtoggle
 scoreboard objectives add ammtoggle dummy ammtoggle
 scoreboard objectives add kpmtoggle dummy kpmtoggle
 scoreboard objectives add fmmtoggle dummy fmmtoggle
-scoreboard objectives add eacmtoggle dummy eacmtoggle
-scoreboard objectives add acmtoggle dummy acmtoggle
 scoreboard objectives add bbrmtoggle dummy bbrmtoggle
 scoreboard objectives add semtoggle dummy semtoggle
 scoreboard objectives add hmmtoggle dummy hmmtoggle
 scoreboard objectives add icmtoggle dummy icmtoggle
 scoreboard objectives add ltmtoggle dummy ltmtoggle
-scoreboard objectives add apmtoggle dummy apmtoggle
 scoreboard objectives add nemtoggle dummy nemtoggle
-scoreboard objectives add nfmtoggle dummy nfmtoggle
-scoreboard objectives add aopamtoggle dummy aopamtoggle
 scoreboard objectives add rsmtoggle dummy rsmtoggle
 scoreboard objectives add ssmtoggle dummy ssmtoggle
-scoreboard objectives add csmtoggle dummy csmtoggle
 scoreboard objectives add tpmtoggle dummy tpmtoggle
 scoreboard objectives add wbmtoggle dummy wbmtoggle
-scoreboard objectives add iimtoggle dummy iimtoggle
 scoreboard objectives add ibmtoggle dummy ibmtoggle
 scoreboard objectives add damtoggle dummy damtoggle
 scoreboard objectives add tamtoggle dummy tamtoggle
@@ -289,13 +212,6 @@ scoreboard players set @s BNTD 0
 scoreboard players set @s BNNA 0
 scoreboard players set @s BNBA 0
 
-#Fake Staff Protection
-scoreboard objectives add 2DI3N dummy 203knK
-scoreboard objectives add 39SN230 dummy D93N3ND
-scoreboard objectives add GFS98 dummy 23LHNK
-scoreboard objectives add D98AD dummy 9DAU32
-scoreboard objectives add I2IO2NO dummy 7D798D8
-
 #Current Worldspawn debug
 scoreboard objectives add x-axis dummy x-axis
 scoreboard objectives add z-axis dummy y-axis
@@ -303,90 +219,49 @@ scoreboard objectives add z-axis dummy y-axis
 #Default Toggles
 scoreboard players set @s SSDEBUG 0
 scoreboard players set @s SSDEBUG3 0
-scoreboard players set @s acmtoggle 0
 scoreboard players set @s lockdowntoggle 0
-scoreboard players set @s armtoggle 0
-scoreboard players set @s apmtoggle 0
-scoreboard players set @s eacmtoggle 0
-scoreboard players set @s efmtoggle 0
-scoreboard players set @s osmtoggle 0
 scoreboard players set @s ammtoggle 0
 scoreboard players set @s kpmtoggle 0
 scoreboard players set @s fmmtoggle 0
-scoreboard players set @s apmtoggle 0
 scoreboard players set @s bbrmtoggle 0
 scoreboard players set @s semtoggle 0
-scoreboard players set @s elpmtoggle 0
 scoreboard players set @s hmmtoggle 0
 scoreboard players set @s icmtoggle 0
 scoreboard players set @s ltmtoggle 0
 scoreboard players set @s nemtoggle 0
-scoreboard players set @s nfmtoggle 0
-scoreboard players set @s aopamtoggle 0
 scoreboard players set @s rsmtoggle 0
 scoreboard players set @s ssmtoggle 0
-scoreboard players set @s csmtoggle 0
 scoreboard players set @s tpmtoggle 0
 scoreboard players set @s wbmtoggle 0
-scoreboard players set @s iimtoggle 0
 scoreboard players set @s ibmtoggle 0
 scoreboard players set @s damtoggle 0
 scoreboard players set @s tamtoggle 0
 scoreboard players set @s mdmtoggle 0
 
 #Give everyone default module scoreboard scores
-scoreboard players set @s ACM 0
 scoreboard players set @s lockdown 0
-scoreboard players set @s ARM 0
-scoreboard players set @s APM 0
-scoreboard players set @s EACM 0
-scoreboard players set @s EFM 0
-scoreboard players set @s AFM 0
-scoreboard players set @s APM 0
 scoreboard players set @s BBRM 0
 scoreboard players set @s SEM 0
-scoreboard players set @s ELPM 0
 scoreboard players set @s HMM 0
 scoreboard players set @s ICM 0
 scoreboard players set @s LTM 0
 scoreboard players set @s NEM 0
-scoreboard players set @s NFM 0
-scoreboard players set @s AOPAM 0
 scoreboard players set @s RSM 0
 scoreboard players set @s RTM 0
 scoreboard players set @s SSM 0
-scoreboard players set @s CSM 0
 scoreboard players set @s TPM 0
 scoreboard players set @s WBM 0
-scoreboard players set @s IIM 0
 scoreboard players set @s IBM 0
 scoreboard players set @s DAM 0
 scoreboard players set @s MDM 0
-scoreboard players set @s OSM 0
 scoreboard players set @s AMM 0
 scoreboard players set @s KPM 0
 scoreboard players set @s FMM 0
 scoreboard players set @s TAM 0
 
-#Staff Protection
-scoreboard players set @s[tag=!stafftag] 2DI3N 0
-scoreboard players set @s[tag=!stafftag] 39SN230 0
-scoreboard players set @s[tag=!stafftag] GFS98 0
-scoreboard players set @s[tag=!stafftag] D98AD 0
-scoreboard players set @s[tag=!stafftag] I2IO2NO 0
 
-#Creative Protection
-scoreboard players set @s[tag=!creativetag] point 0
-scoreboard players set @s[tag=!creativetag] network 0
-scoreboard players set @s[tag=!creativetag] is 0
-scoreboard players set @s[tag=!creativetag] cool 0
-scoreboard players set @s[tag=!creativetag] ez 0
-
-
-#Other utiltiy
+#utiltiy
 gamerule showcoordinates true
-scoreboard objectives add 2KK001 dummy 2KK001
-scoreboard players set @s 2KK001 0
 gamerule functioncommandlimit 10000
 gamerule commandblocksenabled true
 gamerule commandblockoutput false
@@ -395,9 +270,7 @@ gamerule showbordereffect false
 gamerule doinsomnia false
 execute @e[scores={kpmtoggle=1}] ~~~ gamerule drowningdamage false
 scoreboard players set @s hometp 3
-scoreboard players set @s antiopabusemodule 2
 scoreboard players set @s welcomed 1
-scoreboard objectives add gmc_flag dummy
 
 #stops multiple modes from activating at once
 execute @s[scores={ammtoggle=1}] ~~~ scoreboard players set @s KPM 0

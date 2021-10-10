@@ -170,7 +170,7 @@ tag "brampedgex" add PermBan
 tag "" add PermBan
 
 
-#kick @s[tag=PermBan] §¶§cAtomic Utility ➢ You are Atomic Global Banned! You may not join realms protected by Atomic.
+#kick @s[tag=PermBan] §¶§cAtomic Utility ⤤ You are Atomic Global Banned! You may not join realms protected by Atomic.
 
 
 #This hides this from the in-game function command directory

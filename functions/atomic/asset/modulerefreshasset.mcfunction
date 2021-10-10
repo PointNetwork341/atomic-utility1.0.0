@@ -32,8 +32,8 @@ scoreboard players set @a WBM 0
 scoreboard players set @a IIM 0
 
 
-execute @s[tag=!stafftag] ~~~ tellraw @s {"rawtext":[{"text":"§¶§cAtomic Utility §¶§b➢ You must be staff to use this command!"}]}
-execute @s[tag=stafftag] ~~~ tellraw @s {"rawtext":[{"text":"§¶§cAtomic Utility §¶§b➢ Status of all modules have been refreshed"}]}
+execute @s[tag=!stafftag] ~~~ tellraw @s {"rawtext":[{"text":"§¶§cAtomic Utility §¶§b⤤ You must be staff to use this command!"}]}
+execute @s[tag=stafftag] ~~~ tellraw @s {"rawtext":[{"text":"§¶§cAtomic Utility §¶§b⤤ Status of all modules have been refreshed"}]}
 
 
 #This hides this from the in-game function command directory
