@@ -1,0 +1,1233 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "testing",
+          "home_x_negative",
+          "home_y_negative",
+          "home_z_negative",
+          "home_x_positive",
+          "home_y_positive",
+          "home_z_positive",
+          "home_teleport_reset",
+          "spawn_points",
+          "worldborder_pos",
+          "worldborder_neg",
+          "enchanted_helmet",
+          "enchanted_chestplate",
+          "enchanted_leggings",
+          "enchanted_boots",
+          "coords_positive",
+          "coords_negative",
+          "timer",
+          "player_facing"
+        ]
+      },
+      "animations": {
+        "testing": "animation.testing",
+        "home_x_negative": "controller.animation.home_x_negative",
+        "home_y_negative": "controller.animation.home_y_negative",
+        "home_z_negative": "controller.animation.home_z_negative",
+        "home_x_positive": "controller.animation.home_x_positive",
+        "home_y_positive": "controller.animation.home_y_positive",
+        "home_z_positive": "controller.animation.home_z_positive",
+        "home_teleport_reset": "controller.animation.home_teleport_reset",
+        "spawn_points": "controller.animation.spawn_points",
+        "worldborder_pos": "controller.animation.border_control_pos",
+        "worldborder_neg": "controller.animation.border_control_neg",
+        "enchanted_helmet": "controller.animation.enchanted_helmet",
+        "enchanted_chestplate": "controller.animation.enchanted_chestplate",
+        "enchanted_leggings": "controller.animation.enchanted_leggings",
+        "enchanted_boots": "controller.animation.enchanted_boots",
+        "coords_positive": "controller.animation.coords_positive",
+        "coords_negative": "controller.animation.coords_negative",
+        "timer": "controller.animation.timer",
+        "player_facing": "controller.animation.player_facing"
+      }
+    },
+      "minecraft:spectate": {
+        "minecraft:scale": {
+          "value": 0
+        }
+      },
+      "minecraft:no_spectate": {
+        "minecraft:scale": {
+          "value": 1
+        }
+      },
+      "minecraft:add_bad_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "bad_omen",
+              "duration": 6000,
+              "display_on_screen_animation": true
+            }
+          ]
+        }
+      },
+      "minecraft:clear_bad_omen_spell_effect": {
+        "minecraft:spell_effects": {}
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger",
+            "target": "self"
+          }
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": "bad_omen"
+          }
+        ]
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "all_of":[
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value":"stafftag"
+                }
+              ],
+              "any_of": [
+                {
+                  "test":"has_tag",
+                  "subject":"self",
+                  "operator":"==",
+                  "value":"Ban"
+                },
+                {
+                  "test":"has_tag",
+                  "subject":"self",
+                  "operator":"==",
+                  "value":"PermBan"
+                }
+              ]
+            },
+            "event":"atomic:ban_main"
+          },
+          {
+            "filters": {
+              "all_of":[
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value":"stafftag"
+                }
+              ],
+              "any_of": [
+                {
+                  "test":"has_tag",
+                  "subject":"self",
+                  "operator":"==",
+                  "value":"cbesoft"
+                }
+              ]
+            },
+            "event":"atomic:ban_soft"
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test":"has_tag",
+                  "subject":"self",
+                  "operator":"==",
+                  "value":"theif"
+                }
+              ]
+            },
+            "event":"atomic:smooth_brain"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": "spectate"
+                }
+              ]
+            },
+            "event": "minecraft:spectate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "!=",
+                  "subject": "self",
+                  "value": "spectate"
+                }
+              ]
+            },
+            "event": "minecraft:no_spectate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "!=",
+                  "value": "netherite_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:no_netherite_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "==",
+                  "value": "netherite_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:netherite_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "!=",
+                  "value": "diamond_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:no_diamond_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "==",
+                  "value": "diamond_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:diamond_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "!=",
+                  "value": "golden_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:no_golden_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "==",
+                  "value": "golden_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:golden_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "!=",
+                  "value": "iron_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:no_iron_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "==",
+                  "value": "iron_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:iron_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "!=",
+                  "value": "chainmail_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:no_chainmail_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "==",
+                  "value": "chainmail_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:chainmail_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "!=",
+                  "value": "leather_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:no_leather_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "head",
+                  "operator": "==",
+                  "value": "leather_helmet"
+                }
+              ]
+            },
+            "event": "minecraft:leather_helmet"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "!=",
+                  "value": "netherite_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:no_netherite_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "==",
+                  "value": "netherite_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:netherite_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "!=",
+                  "value": "diamond_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:no_diamond_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "==",
+                  "value": "diamond_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:diamond_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "!=",
+                  "value": "golden_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:no_golden_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "==",
+                  "value": "golden_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:golden_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "!=",
+                  "value": "iron_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:no_iron_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "==",
+                  "value": "iron_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:iron_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "!=",
+                  "value": "chainmail_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:no_chainmail_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "==",
+                  "value": "chainmail_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:chainmail_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "!=",
+                  "value": "leather_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:no_leather_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "operator": "==",
+                  "value": "leather_chestplate"
+                }
+              ]
+            },
+            "event": "minecraft:leather_chestplate"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "!=",
+                  "value": "netherite_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:no_netherite_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "==",
+                  "value": "netherite_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:netherite_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "!=",
+                  "value": "diamond_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:no_diamond_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "==",
+                  "value": "diamond_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:diamond_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "!=",
+                  "value": "golden_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:no_golden_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "==",
+                  "value": "golden_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:golden_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "!=",
+                  "value": "iron_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:no_iron_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "==",
+                  "value": "iron_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:iron_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "!=",
+                  "value": "chainmail_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:no_chainmail_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "==",
+                  "value": "chainmail_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:chainmail_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "!=",
+                  "value": "leather_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:no_leather_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "leg",
+                  "operator": "==",
+                  "value": "leather_leggings"
+                }
+              ]
+            },
+            "event": "minecraft:leather_leggings"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "!=",
+                  "value": "netherite_boots"
+                }
+              ]
+            },
+            "event": "minecraft:no_netherite_boots"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "==",
+                  "value": "netherite_boots"
+                }
+              ]
+            },
+            "event": "minecraft:netherite_boots"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "!=",
+                  "value": "diamond_boots"
+                }
+              ]
+            },
+            "event": "minecraft:no_diamond_boots"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "==",
+                  "value": "diamond_boots"
+                }
+              ]
+            },
+            "event": "minecraft:diamond_boots"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "!=",
+                  "value": "golden_boots"
+                }
+              ]
+            },
+            "event": "minecraft:no_golden_boots"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "==",
+                  "value": "golden_boots"
+                }
+              ]
+            },
+            "event": "minecraft:golden_boots"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "!=",
+                  "value": "iron_boots"
+                }
+              ]
+            },
+            "event": "minecraft:no_iron_boots"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "==",
+                  "value": "iron_boots"
+                }
+              ]
+            },
+            "event": "minecraft:iron_boots"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "!=",
+                  "value": "chainmail_boots"
+                }
+              ]
+            },
+            "event": "minecraft:no_chainmail_boots"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "==",
+                  "value": "chainmail_boots"
+                }
+              ]
+            },
+            "event": "minecraft:chainmail_boots"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "!=",
+                  "value": "leather_boots"
+                }
+              ]
+            },
+            "event": "minecraft:no_leather_boots"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "feet",
+                  "operator": "==",
+                  "value": "leather_boots"
+                }
+              ]
+            },
+            "event": "minecraft:leather_boots"
+          ]
+        }
+      },
+      "minecraft:no_netherite_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s nethhelm 0"
+          ]
+        }
+      },
+      "minecraft:netherite_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s nethhelm 1"
+          ]
+        }
+      },
+      "minecraft:no_netherite_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s nethchest 0"
+          ]
+        }
+      },
+      "minecraft:netherite_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s nethchest 1"
+          ]
+        }
+      },
+      "minecraft:no_netherite_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s nethlegs 0"
+          ]
+        }
+      },
+      "minecraft:netherite_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s nethlegs 1"
+          ]
+        }
+      },
+      "minecraft:no_netherite_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s nethboots 0"
+          ]
+        }
+      },
+      "minecraft:netherite_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s nethboots 1"
+          ]
+        }
+      },
+      "minecraft:no_diamond_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s diahelm 0"
+          ]
+        }
+      },
+      "minecraft:diamond_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s diahelm 1"
+          ]
+        }
+      },
+      "minecraft:no_diamond_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s diachest 0"
+          ]
+        }
+      },
+      "minecraft:diamond_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s diachest 1"
+          ]
+        }
+      },
+      "minecraft:no_diamond_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s dialegs 0"
+          ]
+        }
+      },
+      "minecraft:diamond_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s dialegs 1"
+          ]
+        }
+      },
+      "minecraft:no_diamond_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s diaboots 0"
+          ]
+        }
+      },
+      "minecraft:diamond_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s diaboots 1"
+          ]
+        }
+      },
+      "minecraft:no_golden_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s goldhelm 0"
+          ]
+        }
+      },
+      "minecraft:golden_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s goldhelm 1"
+          ]
+        }
+      },
+      "minecraft:no_golden_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s goldchest 0"
+          ]
+        }
+      },
+      "minecraft:golden_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s goldchest 1"
+          ]
+        }
+      },
+      "minecraft:no_golden_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s goldlegs 0"
+          ]
+        }
+      },
+      "minecraft:golden_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s goldlegs 1"
+          ]
+        }
+      },
+      "minecraft:no_golden_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s goldboots 0"
+          ]
+        }
+      },
+      "minecraft:golden_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s goldboots 1"
+          ]
+        }
+      },
+      "minecraft:no_iron_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s ironhelm 0"
+          ]
+        }
+      },
+      "minecraft:iron_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s ironhelm 1"
+          ]
+        }
+      },
+      "minecraft:no_iron_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s ironchest 0"
+          ]
+        }
+      },
+      "minecraft:iron_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s ironchest 1"
+          ]
+        }
+      },
+      "minecraft:no_iron_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s ironlegs 0"
+          ]
+        }
+      },
+      "minecraft:iron_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s ironlegs 1"
+          ]
+        }
+      },
+      "minecraft:no_iron_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s ironboots 0"
+          ]
+        }
+      },
+      "minecraft:iron_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s ironboots 1"
+          ]
+        }
+      },
+      "minecraft:no_chainmail_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s chainhelm 0"
+          ]
+        }
+      },
+      "minecraft:chainmail_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s chainhelm 1"
+          ]
+        }
+      },
+      "minecraft:no_chainmail_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s chainchest 0"
+          ]
+        }
+      },
+      "minecraft:chainmail_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s chainchest 1"
+          ]
+        }
+      },
+      "minecraft:no_chainmail_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s chainlegs 0"
+          ]
+        }
+      },
+      "minecraft:chainmail_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s chainlegs 1"
+          ]
+        }
+      },
+      "minecraft:chainmail_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s chainboots 1"
+          ]
+        }
+      },
+      "minecraft:no_chainmail_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s chainboots 0"
+          ]
+        }
+      },
+      "minecraft:no_leather_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s leathhelm 0"
+          ]
+        }
+      },
+      "minecraft:leather_helmet": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s leathhelm 1"
+          ]
+        }
+      },
+      "minecraft:no_leather_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s leathchest 0"
+          ]
+        }
+      },
+      "minecraft:leather_chestplate": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s leathchest 1"
+          ]
+        }
+      },
+      "minecraft:no_leather_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s leathlegs 0"
+          ]
+        }
+      },
+      "minecraft:leather_leggings": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s leathlegs 1"
+          ]
+        }
+      },
+      "minecraft:no_leather_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s leathboots 0"
+          ]
+        }
+      },
+      "minecraft:leather_boots": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "scoreboard players set @s leathboots 1"
+          ]
+        }
+      },
+      "minecraft:has_levitation": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "tag @s add Effect:Levitation"
+          ]
+        }
+      },
+      "minecraft:no_levitation": {
+        "run_command": {
+          "target": "self",
+          "command": [
+            "tag @s remove Effect:Levitation"
+          ]
+        }
+      },
+      "minecraft:gain_bad_omen": {
+        "add": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        }
+      },
+      "minecraft:clear_add_bad_omen": {
+        "remove": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:clear_bad_omen_spell_effect"
+          ]
+        }
+      },
+      "minecraft:remove_raid_trigger": {
+        "remove": {
+          "component_groups": [
+            "minecraft:raid_trigger"
+          ]
+        }
+      }
+    }
+  }
+}

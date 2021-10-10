@@ -1,0 +1,29 @@
+{
+	"format_version": 1,
+	"header": {
+		"name": "§¶§c§l⋰      Atomic Utility Addon 1.0.0   ⋱",
+		"description": "§¶§6§lTurn on Holiday Creator Features and Additional Modding Capabilities!!!",
+		"uuid": "51057774-2c25-412d-aec1-1b496e31dbef",
+		"version": [
+			1,
+			0,
+			8
+		],
+		"min_engine_version": [
+			1,
+			8,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "5e439a4f-6052-4cd7-b9c7-fea570621553",
+			"version": [
+				1,
+				1,
+				7
+			]
+		}
+	]
+}
